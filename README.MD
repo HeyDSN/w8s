@@ -14,4 +14,4 @@
 - DELETE /order/{id}
   - Deletes an existing order with items
 
-For API Documentation, please refer to [API DOC.MD]("API DOC.MD")
+For API Documentation, please refer to [API DOC.MD](API DOC.MD)
