@@ -3,16 +3,16 @@ package models
 import "time"
 
 type Order struct {
-	OrderId      uint64 `gorm:"primaryKey"`
-	CustomerName string
-	OrderedAt    time.Time
-	Items        []Item `gorm:"foreignKey:OrderID"`
+	OrderId      uint64    `gorm:"primaryKey" json:"order_id"`
+	CustomerName string    `json:"customer_name"`
+	OrderedAt    time.Time `json:"ordered_at"`
+	Items        []Item    `gorm:"foreignKey:OrderID" json:"items"`
 }
 
 type Item struct {
-	ItemId      uint64 `gorm:"primaryKey"`
-	ItemCode    string
-	Description string
-	Quantity    uint64
-	OrderID     uint64
+	ItemId      uint64 `gorm:"primaryKey" json:"item_id"`
+	ItemCode    string `json:"item_code"`
+	Description string `json:"description"`
+	Quantity    uint64 `json:"quantity"`
+	OrderID     uint64 `json:"order_id"`
 }

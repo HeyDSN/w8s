@@ -10,6 +10,14 @@ type OrderRepo struct {
 	Conn *gorm.DB
 }
 
+type IOrderRepo interface {
+	CreateOrder(order *models.Order) error
+	GetOrders(orders *[]models.Order) error
+	GetOrder(id uint64, order *models.Order) error
+	UpdateOrder(id uint64, order *models.Order) error
+	DeleteOrder(id uint64) error
+}
+
 func (r *OrderRepo) CreateOrder(order *models.Order) error {
 	return r.Conn.Create(order).Error
 }
